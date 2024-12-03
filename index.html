@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Butaca Virtual</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <script src="ajax.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Landing Page -->
+    <section id="landing" style="text-align: center; padding: 20px;">
+        <h1>Bienvenido a la Butaca Virtual 🎬</h1>
+        <p>Encuentra tus películas y series favoritas con solo un clic. Explora los detalles de cada título fácilmente.</p>
+        <button onclick="ocultarLanding()" aria-label="Botón para comenzar">Comenzar</button>
+    </section>
+    <!-- Header -->
+    <header style="display: none;">
+        <h1>🎬 Buscador de Películas y Series</h1>
+        <div class="search-container">
+            <input type="text" id="cajaTexto" placeholder="Buscar película o serie..." aria-label="Campo de búsqueda de película o serie">
+            <button id="btn" aria-label="Botón de búsqueda">Buscar</button>
+        </div>
+        <div class="filter-container">
+            <label>
+                <input type="radio" name="tipoBusqueda" value="movie" checked aria-label="Filtro para buscar películas"> Películas
+            </label>
+            <label>
+                <input type="radio" name="tipoBusqueda" value="series" aria-label="Filtro para buscar series"> Series
+            </label>
+            <button id="crearInforme" onclick="crearInforme()" style="display: none;" aria-label="Botón para crear informe">Crear Informe</button>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <main style="display: none;">
+        <div id="loading" style="display: none; text-align: center;" aria-live="polite">
+            <p>🔄 Cargando resultados...</p>
+        </div>
+        <section id="resultado">
+            <h2 id="numeroResultados" aria-live="polite"></h2>
+            <ul id="lista" class="selectable-list" aria-label="Lista de resultados"></ul>
+            <button id="verMas" onclick="verMas()" style="display: none;" aria-label="Botón para cargar más resultados">Ver más</button>
+        </section>
+        <section id="informe" style="display: none;">
+            <canvas id="grafica"></canvas>
+            <ul id="listaInforme"></ul>
+            <button id="volverAResultados" onclick="volverAResultados()">⬅ Volver a resultados</button>
+        </section>
+        <section id="detalle" style="display: none;" aria-label="Detalle de la película o serie seleccionada">
+            <!-- Detalle de la película o serie seleccionada -->
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <p>La Butaca Virtual @2024</p>
+    </footer>
+</body>
+</html>
