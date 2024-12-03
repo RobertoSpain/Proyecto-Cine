@@ -42,7 +42,7 @@ function iniciarNuevaBusqueda() {
  document.getElementById("crearInforme").style.display = "none";
 }
 
-// Función para ocultar la sección de landing (si la tienes)
+// Función para ocultar la sección de landing
 function ocultarLanding() {
  document.getElementById("landing").style.display = "none";
  document.querySelector("header").style.display = "block";
@@ -139,7 +139,7 @@ if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 500))
    }
 });
 
-// Función para cargar más resultados (siguiente página)
+// Función para cargar más resultados 
 function verMas() {
  if (puedeCargarMas && !cargando) {
  paginaActual++;
